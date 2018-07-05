@@ -1,5 +1,15 @@
 package com.jda.functionalprograms;
 
-public class FlipCoin {
+import com.jda.utility.FlipCoinUtility;
 
-}
+public class FlipCoin {
+	public static void main(String args[]){
+		
+	
+	int c =flipCoinUtility()
+	
+		
+	}
+	
+	}
+

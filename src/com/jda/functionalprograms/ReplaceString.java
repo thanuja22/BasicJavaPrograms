@@ -1,6 +1,5 @@
 package com.jda.functionalprograms;
 
-import java.util.Scanner;
 import com.jda.utility.Utility;
 
 public class ReplaceString {
@@ -9,7 +8,7 @@ public class ReplaceString {
 		Utility utility = new Utility();
 		String template = "Hello <<Username>>, How are you?";
 		System.out.println("Enter your name: ");
-		String Inputname=new Input(); 
+		String Inputname = utility.inputString();
 		String output = utility.replaceString(template, Inputname);
 		System.out.println(output);
 	

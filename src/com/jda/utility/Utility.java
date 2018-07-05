@@ -3,23 +3,27 @@ package com.jda.utility;
 import java.util.Scanner;
 
 public class Utility {
-
+	Scanner scanner;
 	
-	public String Input()
-	{
-		System.out.println("Enter your name: ");
-		Scanner scanner=new Scanner(System.in);
-		String name=scanner.next();
-		scanner.close();
-		return name;
+
+	public Utility() {
+		scanner = new Scanner(System.in);
 	}
-	public String replaceString(String template, String name){
-		template = template.replace("<<Username>>",name);
-		return template;
+
+	public String inputString(){
+		return scanner.next();
 		
-			
+	}
+	public int inputInt()
+	{
+		
+		return scanner.nextInt();
 	}
 
-	
+	public String replaceString(String template, String name) {
+		template = template.replace("<<Username>>", name);
+		return template;
+
+	}
 
 }
