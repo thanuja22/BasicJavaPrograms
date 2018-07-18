@@ -8,9 +8,12 @@ public static void main(String args[])
 	Utility wind=new Utility();
 	System.out.println("Value of velocity : ");
 	int velocity=wind.inputInt();
-	System.out.println("Value of time : ");
-	int time=wind.inputInt();
-	Utility.windChill(velocity, time);
+	System.out.println("Value of temperature : ");
+	int tem=wind.inputInt();
+	double value=Utility.windchill(velocity, tem);
+	System.out.println("value of w : "+value);
+	
+	
 	
 	
 	

@@ -1,5 +1,6 @@
 package com.jda.utility;
 import java.io.PrintWriter;
+import java.util.Arrays;
 /**
  * 
  */
@@ -23,14 +24,14 @@ public class Utility {
  * @return
  */
 	public String inputString(){
-		return scanner.next();
+		return scanner.nextLine();
 		
 	}
 	/**
 	 * method for leap year
 	 * @return
 	 */
-	public static int inputInt()
+	public int inputInt()
 	{
 		
 		return scanner.nextInt();
@@ -260,7 +261,7 @@ public static int[] arrayInput(int N)
 	}
 	return a;
 }
-public static int sumOfThree(int N,int b[])
+public int sumOfThree(int N,int b[])
 {
 	int i,j,k,count=0;
 	for(i=0;i<N;i++){
@@ -280,6 +281,109 @@ public static int sumOfThree(int N,int b[])
 		}
 	}
 	return count;
+}
+public static double distance(int x,int y)
+{
+double xvalue=Math.pow(x, 2);
+double yvalue=Math.pow(y, 2);
+double value=xvalue+yvalue;
+double dst=Math.sqrt(value);
+return dst;
+}
+
+public static void  quadratic(int a,int b,int c)
+{
+double[] array=new double[2];
+double delta=b*b-4*a*c;
+array[0]=((-b+Math.sqrt(delta))/(2*a));
+array[1]=((-b-Math.sqrt(delta))/(2*a));
+System.out.println("roots are "+array[0]+","+array[1]);
+
+}
+
+public static double windchill(double velocity, double tem)
+{
+double temp=(((0.4275*tem)-35.75)*(Math.pow(velocity, 0.16)));
+double value=(35.74+(0.6215*tem)+temp);
+return value;
+}
+public String swap(String a, int i, int j)
+{
+    char temp;
+    char[] charArray = a.toCharArray();
+    temp = charArray[i] ;
+    charArray[i] = charArray[j];
+    charArray[j] = temp;
+    return String.valueOf(charArray);
+}
+public void permute(String str, int l, int r)
+{
+    if (l == r)
+        System.out.println(str);
+    else
+    {
+        for (int i = l; i <= r; i++)
+        {
+            str = swap(str,l,i);
+            permute(str, l+1, r);
+            str = swap(str,l,i);
+        }
+    }
+}
+/* Start of Algorithm programs*/
+//
+//
+//
+public static void anagramDetection(String string1,String string2)
+{
+	String s1=string1.replaceAll("\\s", "");
+	String s2=string2.replaceAll("\\s", "");
+	boolean status = true;  
+    if (s1.length() != s2.length()) 
+    {  
+        status = false;  
+    } else {  
+        char[] ArrayS1 = s1.toLowerCase().toCharArray();  
+        char[] ArrayS2 = s2.toLowerCase().toCharArray();  
+        Arrays.sort(ArrayS1);  
+        Arrays.sort(ArrayS2);  
+        status = Arrays.equals(ArrayS1, ArrayS2);  
+    }  
+    if (status) {  
+        System.out.println(s1 + " and " + s2 + " are anagrams");  
+    } else {  
+        System.out.println(s1 + " and " + s2 + " are not anagrams");  
+    }  
+}
+public static void primeNumberSearch(int l,int u)
+{
+	int i,j,flag=0;
+	for(i=l;i<u;i++)
+	{
+		for(j=2;j<i;j++)
+		{
+		if(i%j==0)
+		{
+			flag=0;
+			break;
+			
+		}
+		else
+		{
+			flag=1;
+			
+		}
+		
+		}
+		if(flag==1)
+		{
+			System.out.println();
+			System.out.println(i);
+			
+		}
+	}
+	
+	
 }
 }
 

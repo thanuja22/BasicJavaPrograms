@@ -10,7 +10,8 @@ public class Distance {
 		int x=dist.inputInt();
 		System.out.println("Enter the y co-ordinate : ");
 		int y=dist.inputInt();
-		Utility.distance(x,y);
+		double distance=Utility.distance(x,y);
+		System.out.println(distance);
 		
 	}
 
