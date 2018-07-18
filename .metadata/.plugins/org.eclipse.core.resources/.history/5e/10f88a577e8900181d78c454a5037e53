@@ -1,0 +1,19 @@
+package com.jda.functionalprograms;
+
+import com.jda.utility.Utility;
+
+public class SumOfThree {
+	public static void main(String args[])
+	{
+		
+		System.out.println("length of the array : ");
+		int size=Utility.inputInt();
+		System.out.println("array entries : ");
+		int a[]=Utility.arrayInput(size);
+		int count=Utility.sumOfThree(size, a);
+		System.out.println("number of outcomes :"+ count);
+		
+		
+	}
+
+}

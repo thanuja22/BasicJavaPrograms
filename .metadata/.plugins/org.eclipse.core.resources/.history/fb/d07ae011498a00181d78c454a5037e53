@@ -1,0 +1,12 @@
+package com.jda.functionalprograms;
+
+import com.jda.utility.Utility;
+
+public class Recursion {
+	public static void main(String args[])
+	{
+		Utility permutation=new Utility();
+		permutation.permute(str, l, i);
+	}
+
+}
