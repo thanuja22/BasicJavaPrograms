@@ -11,6 +11,8 @@ public class Anagram {
 		System.out.println("Enter the second string : ");
 		String string2=string.inputString();
 		Utility.anagramDetection(string1, string2);
+		
+		
 	}
 
 }
