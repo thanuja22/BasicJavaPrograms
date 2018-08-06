@@ -6,12 +6,17 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
 /**
  * 
  */
 import java.util.Scanner;
 import java.util.Stack;
-
 public class Utility {
 	
 		
@@ -951,33 +956,28 @@ public int fun(Iterator itr11,Iterator<Entry> itr1,int amnt,int price,String wt)
 {
 		while (itr11.hasNext()) 
 	     {
-	         itr = ((String)) itr1.next()).entrySet().iterator();
-	// Map Rice = ((Map)jsonObject.get("Rice"));
-   
-       // iterating address Map
-     //  Iterator<Map.Entry> itr1 = Rice.entrySet().iterator();
+	         itr1 = ((Map) itr11.next()).entrySet().iterator();
+	
 	         int a=0;
        while (itr1.hasNext()) {
-           Map.Entry pair = itr.next();
+           Map.Entry pair = itr1.next();
            if((pair.getKey()).equals("Weight"))
            {
            	wt=(String) pair.getValue();
-           	// System.out.println(wt);
+           	
            }
           
            if((pair.getKey()).equals("pricePerKg"))
            {
            	String val=(String) pair.getValue();
-           //	System.out.println(val);
            
-           	//System.out.println(w);
            	 a=Integer.parseInt(val);
-           	//System.out.println(a);
+           	
            	
            }
        	int w=Integer.parseInt(wt);
        	int b=w*a;
-   //   	System.out.println(b);
+  
       
       	amnt=amnt+b;
     	

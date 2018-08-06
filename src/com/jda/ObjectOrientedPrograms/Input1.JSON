@@ -1,1 +1,31 @@
-{pulses=[{"name":"Red Gram,""weight":"20,"priceperkg":"200}], wheat=[{"name":"Aashirwad,""weight":"60,"priceperkg":"30}], rice=[{"name":"Basmati,""weight":"50,"priceperkg":"100}, {"name":"mansoori,""weight":"70,"priceperkg":"80}, {"name":"kuchnhi,""weight":"70,"priceperkg":"100}]}
+{
+   "NAME": "So",
+   
+    "Rice":[
+	{
+        "Name": "Brown Rice",
+        "Weight": "2",
+        "pricePerKg": "5"
+		},
+		 {
+	
+        "Name": "Green Rice",
+        "Weight": "3",
+        "pricePerKg": "4"
+		}
+    ],
+	 "Pulses": [
+	 {
+        "Name": "Black Gram",
+        "Weight": "3",
+        "pricePerKg": "10"
+		}
+    ],
+	 "Wheat": [
+	 {
+        "Name": "Wheat",
+        "Weight": "5",
+        "pricePerKg": "15"
+		}
+    ]
+}
