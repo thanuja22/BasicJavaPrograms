@@ -11,7 +11,7 @@ public class SortingFunction {
 		//object instance
 		Utility u=new Utility();
 		
-		long order[]=new long[6];
+		//long order[]=new long[6];
 		
 		//Binary search of integers
 		long startBi=u.startTimer();

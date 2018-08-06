@@ -2,17 +2,24 @@ package com.jda.utility;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Map.Entry;
 /**
  * 
  */
 import java.util.Scanner;
+import java.util.Stack;
 
 public class Utility {
 	
 		
 	
 	static Scanner scanner;
-	
+	public String[] months = new String[] {"Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"};
+	public char[] dayNotation = new char[] {'S','M','T','W','T','F','S'};
+	public int[] days = new int[] {31,28,31,30,31,30,31,31,30,31,30,31};
 	
 /**
  * default constructor for  scanner
@@ -24,9 +31,14 @@ public class Utility {
  * Method for replace string
  * @return
  */
-	public static String inputString(){
-		return scanner.next();
+	public String inputString(){
+		return scanner.nextLine();
 		
+	}
+	
+	public boolean inputBoolean()
+	{
+		return scanner.nextBoolean();
 	}
 	/**
 	 * method for leap year
@@ -55,18 +67,14 @@ public class Utility {
 		return template;
 
 	}
-	public static void leapYear(int year)
-	{
-		int var=year;
-		if((var%400==0) ||((var%4==0)&&(var%100!=0)))
-		{
-			System.out.println("leap year");
-		}
+	public Boolean leapYear(int input) {
+		Boolean leap;
+		if (input % 400 == 0 || input % 100 == 0 && input % 4 == 0)
+			leap = true;
 		else
-		{
-			System.out.println("not leap year");
-		}
-		
+			leap = false;
+
+		return leap;
 	}
 	public static void flipCoin(){
 		if(Math.random()<0.5)
@@ -256,7 +264,7 @@ public static void display(int a[][],double b[][],boolean c[][],int m,int n)
 	pw.println("\t");
 	}
 }
-public static int[] arrayInput(int N)
+public int[] arrayInput(int N)
 {
 	int a[]=new int[N];
 	for(int i=0;i<N;i++)
@@ -424,7 +432,7 @@ public static void anagramDetection(String string1,String string2)
         System.out.println(s1 + " and " + s2 + " are not anagrams");  
     }  
 }
-public static int anagramPrimeDetection(int a[])
+/*public static int anagramPrimeDetection(int a[])
 {
 	
 	boolean status;
@@ -447,7 +455,7 @@ public static int anagramPrimeDetection(int a[])
     } else {  
         System.out.println(string1 + " and " + string2 + " are not anagrams");  
     }  
-}
+}*/
 public ArrayList<Integer> primeNumberSearch(int l,int u)
 {
 	int n=5;
@@ -493,7 +501,7 @@ public ArrayList<Integer> primeNumberSearch(int l,int u)
 }
 //Binary Search
 
-	public int binarySearch(int[] inputArr, int key) {
+	/*int binarySearch(int[] inputArr, int key) {
       int start = 0;
       int end = inputArr.length - 1;
       while (start <= end) {
@@ -569,7 +577,7 @@ public ArrayList<Integer> primeNumberSearch(int l,int u)
 			return words;
 		}
 		
-	public static void printArray(int arr[])
+	public void printArray(int arr[])
     {
         int n = arr.length;
         for (int i=0; i<n; ++i)
@@ -577,7 +585,7 @@ public ArrayList<Integer> primeNumberSearch(int l,int u)
  
         System.out.println();
     }
-	public static void printStringArray(String arr[])
+	public void printStringArray(String arr[])
     {
         int n = arr.length;
         for (int i=0; i<n; ++i)
@@ -622,132 +630,67 @@ public ArrayList<Integer> primeNumberSearch(int l,int u)
 	    	}
 			return numbers;
 		}
-		//merge sort int
-		public void merge(int arr[], int l, int m, int r)
-		    {
-		        // Find sizes of two subarrays to be merged
-		        int n1 = m - l + 1;
-		        int n2 = r - m;
-		 
-		        /* Create temp arrays */
-		        int L[] = new int [n1];
-		        int R[] = new int [n2];
-		 
-		        /*Copy data to temp arrays*/
-		        for (int i=0; i<n1; ++i)
-		            L[i] = arr[l + i];
-		        for (int j=0; j<n2; ++j)
-		            R[j] = arr[m + 1+ j];
-		 
-		 
-		        /* Merge the temp arrays */
-		 
-		        // Initial indexes of first and second subarrays
-		        int i = 0, j = 0;
-		 
-		        // Initial index of merged subarry array
-		        int k = l;
-		        while (i < n1 && j < n2)
-		        {
-		            if (L[i] <= R[j])
-		            {
-		                arr[k] = L[i];
-		                i++;
-		            }
-		            else
-		            {
-		                arr[k] = R[j];
-		                j++;
-		            }
-		            k++;
-		        }
-		 
-		        /* Copy remaining elements of L[] if any */
-		        while (i < n1)
-		        {
-		            arr[k] = L[i];
-		            i++;
-		            k++;
-		        }
-		 
-		        /* Copy remaining elements of R[] if any */
-		        while (j < n2)
-		        {
-		            arr[k] = R[j];
-		            j++;
-		            k++;
-		        }
-		    }
-		 public void sort(int arr[], int l, int r)
-		    {
-		        if (l < r)
-		        {
-		            // Find the middle point
-		            int m = (l+r)/2;
-		 
-		            // Sort first and second halves
-		            sort(arr, l, m);
-		            sort(arr , m+1, r);
-		 
-		            // Merge the sorted halves
-		            merge(arr, l, m, r);
-		        }
-		    }
-		 //merge sort string
-		 public static String[] mergeSort(String[] list) {
-		        String [] sorted = new String[list.length];
-		        if (list.length == 1) {
-		            sorted = list;
-		        } else {
-		            int mid = list.length/2;
-		            String[] left = null; 
-		            String[] right = null;
-		            if ((list.length % 2) == 0) {
-		                left = new String[list.length/2];
-		                right = new String[list.length/2];
-		            } else { 
-		                left = new String[list.length/2];
-		                right = new String[(list.length/2)+1];
-		            }
-		            int x=0;
-		            int y=0;
-		            for ( ; x < mid; x++) {
-		                left[x] = list[x];
-		            }
-		            for ( ; x < list.length; x++) {
-		                right[y++] = list[x];
-		            }
-		            left = mergeSort(left);
-		            right = mergeSort(right);
-		            sorted = mergeArray(left,right);
-		        }
+		
+		 public void merge(String stringarray[], int start, int mid, int end) {
+				int length1 = mid - start + 1;
+				int length2 = end - mid;
+				String[] left = new String[length1];
+				String[] right = new String[length2];
+				for (int i = 0; i < length1; i++) {
+					left[i] = stringarray[i + start];
 
-		        return sorted;
-		    }
-		 static String[] mergeArray(String[] left, String[] right) {
-		        String[] merged = new String[left.length+right.length];
-		        int lIndex = 0;
-		        int rIndex = 0;
-		        int mIndex = 0;
-		        int comp = 0;
-		        while (lIndex < left.length || rIndex < right.length) {
-		            if (lIndex == left.length) {
-		                merged[mIndex++] = right[rIndex++];
-		            } else if (rIndex == right.length) {
-		                merged[mIndex++] = left[lIndex++];
-		            } else {  
-		                comp = left[lIndex].compareTo(right[rIndex]);
-		                if (comp > 0) {
-		                    merged[mIndex++] = right[rIndex++];
-		                } else if (comp < 0) {
-		                    merged[mIndex++] = left[lIndex++];
-		                } else { 
-		                    merged[mIndex++] = left[lIndex++];
-		                }
-		            }   
-		        }
-		        return merged;
-		    }
+				}
+				for (int i = 0; i < length2; i++) {
+					right[i] = stringarray[i + mid + 1];
+
+				}
+				int i = 0, j = 0;
+				int k = start;
+				while (i < length1 && j < length2) {
+					if (left[i].compareTo(right[j]) <= 0) {
+						stringarray[k] = left[i];
+						i++;
+					} else {
+						stringarray[k] = right[j];
+						j++;
+					}
+					k++;
+				}
+				while (i < length1) {
+					stringarray[k] = left[i];
+					k++;
+					i++;
+				}
+				while (j < length2) {
+					stringarray[k] = right[j];
+					k++;
+					j++;
+				}
+
+			}
+
+			public void printArray(String[] stringarray) {
+				int n = stringarray.length;
+				for (int i = 0; i < n; ++i)
+					System.out.print(stringarray[i] + " ");
+
+			}
+
+			/**
+			 * Sorting of two String arrays using mergesort
+			 * 
+			 * @param stringarray
+			 * @param start
+			 * @param end
+			 */
+			public void mergeSort(String stringarray[], int start, int end) {
+				while (start < end) {
+					int mid = ((start + end) / 2);
+					mergeSort(stringarray, start, mid);
+					mergeSort(stringarray, mid + 1, end);
+					merge(stringarray, start, mid, end);
+				}
+			}
 		 
 
 			  	// Function for Calculating the notes
@@ -787,7 +730,7 @@ public ArrayList<Integer> primeNumberSearch(int l,int u)
 			        else                     return search(mid, hi);
 			    }
 
-}		  	
+		  	
 			  	
 			  	public void dayOfWeek()
 			  	{
@@ -860,13 +803,13 @@ public ArrayList<Integer> primeNumberSearch(int l,int u)
 			  	   
 			          }
 			  	public void temperaturConversion(double temperature,boolean temp) {
-			  		if(temp) {
-			  			double f= (temperature*(9/5))+32;
-			  			System.out.println("temperature in fahrenheit is"+f);
+			  		if(temp == true) {
+			  			double f= (temperature*(9.0/5))+32;
+			  			System.out.println("temperature in fahrenheit is "+f);
 			  		}
 			  			else {
-			  				double c=(temperature-32)*5/9;
-			  				System.out.println("temperature in centigrade is"+c);
+			  				double c=(temperature-32)*(5.0/9);
+			  				System.out.println("temperature in centigrade is "+c);
 			  			}
 			  		}
 			  	public double sqrt(double c)
@@ -878,17 +821,19 @@ public ArrayList<Integer> primeNumberSearch(int l,int u)
 			        }
 					return t;
 			  	}
-			  	public int toBinary(int decimalNumber)
+			  	
+			  	public void toBinary(int input)
 			  	{
-			  		if(decimalNumber==0)
-			  			return 0;
-			  		else
-			  			return(decimalNumber%2+10*toBinary(decimalNumber/2));
+			  		if (input > 1)
+						toBinary(input / 2);
+					System.out.print(input % 2 + " ");
+
 			  	}
-			  	public int swapNibbles(int x)
+			  	public void swapNibbles(int x)
 			  	{
-			  		return ((x & 0x0F) << 4 | (x & 0xF0) >> 4);
+			  		System.out.println((x & 0x0F) << 4 | (x & 0xF0) >> 4);
 			  	}
+			  	
 			  	public double monthlypayment(double P,double Y,double R)
 			  	{
 			  		double n=12*Y;
@@ -900,8 +845,167 @@ public ArrayList<Integer> primeNumberSearch(int l,int u)
 			  		payment=P*r/z;
 			  		return payment;
 			  	}
+				/*public int binarySearch(String[] a, int key) {
+					int start = 0;
+				      int end = a.length - 1;
+				      while (start <= end) {
+				          int mid = (start + end) / 2;
+				          if (key == a[mid]) {
+				              return mid;
+				          }
+				          if (key < a[mid]) {
+				             	end = mid - 1;
+				          } else {
+				             	start = mid + 1;
+				          }
+				      }
+				      return -1;
+				
 				
 				}
+				public boolean balanceChecker(char[] inputArray)
+				{
+					Stack<Character> st=new Stack<Character>();
+				
+					for(int i=0;i<inputArray.length;i++)
+					{
+						if(inputArray[i]=='(')
+							
+					}
+				}*/
+
+/*public int binarySearchString(String[] names,String key)
+{
+	int first = 0;
+	int last  = names.length;
+
+	while (first < last) {
+    	int mid = (first + last) / 2;
+    	if (key.compareTo(names[mid]) < 0) {
+       			last = mid;
+    	} else if (key.compareTo(names[mid]) > 0) {
+        		first = mid + 1;
+    	} else {
+        		return mid;
+    	}
+	}		
+	return -1;
+	
+}*/
+public int dayWeek(int month, int day, int year) {
+	int y0, x, m0, d0;
+	y0 = year - (14 - month) / 12;
+	x = y0 + y0 / 4 - y0 / 100 + y0 / 400;
+	m0 = month + 12 * ((14 - month) / 12) - 2;
+	d0 = (day + x + 31 * m0 / 12) % 7;
+	return d0;
+	
+}
+public ArrayList<Integer> primesList(int input) {
+	int i;
+	ArrayList<Integer>array=new ArrayList<Integer>();
+	for (i = 2; i <= input; i++) {
+		if (checkPrime(i))
+			array.add(i);
+		else
+			continue;
+
+	}
+	return array;
+}	
+public boolean checkPrime(int current) {
+	for (int i = 2; i <= Math.sqrt(current); i++) {
+		if (current % i == 0)
+			return false;
+	}
+	return true;
+}
+
+public boolean checkAnagram(String string1, String string2) {
+	boolean bool;
+	string1 = string1.replaceAll("\\s+", "");
+	string1 = string1.toLowerCase();
+	string2 = string2.replaceAll("\\s+", "");
+	string2 = string2.toLowerCase();
+	if (string1.length() == string2.length()) {
+		char[] string1array = string1.toCharArray();
+		char[] string2array = string2.toCharArray();
+		Arrays.sort(string1array);
+		Arrays.sort(string2array);
+
+		bool = Arrays.equals(string1array, string2array);
+		return bool;
+	} else
+		return false;
+}
+public int getDay(int date, int month, int year) {
+	
+	int y = year - (14-month)/12;
+	int x = y + y/4 - y/100 + y/400;
+	int m = month + 12*((14-month)/12) - 2;
+	int d = (date + x + (31*m)/12)%7;
+	return d;
+	
+}
+public int fun(Iterator itr11,Iterator<Entry> itr1,int amnt,int price,String wt)
+{
+		while (itr11.hasNext()) 
+	     {
+	         itr = ((String)) itr1.next()).entrySet().iterator();
+	// Map Rice = ((Map)jsonObject.get("Rice"));
+   
+       // iterating address Map
+     //  Iterator<Map.Entry> itr1 = Rice.entrySet().iterator();
+	         int a=0;
+       while (itr1.hasNext()) {
+           Map.Entry pair = itr.next();
+           if((pair.getKey()).equals("Weight"))
+           {
+           	wt=(String) pair.getValue();
+           	// System.out.println(wt);
+           }
+          
+           if((pair.getKey()).equals("pricePerKg"))
+           {
+           	String val=(String) pair.getValue();
+           //	System.out.println(val);
+           
+           	//System.out.println(w);
+           	 a=Integer.parseInt(val);
+           	//System.out.println(a);
+           	
+           }
+       	int w=Integer.parseInt(wt);
+       	int b=w*a;
+   //   	System.out.println(b);
+      
+      	amnt=amnt+b;
+    	
+           System.out.println(pair.getKey() + " : " + pair.getValue());
+          
+       }
+       System.out.println("Amount till now " +amnt);
+	     }
+		return amnt;
+}
+public static StringBuilder createJsonfromArray(Collection products) {
+	StringBuilder jsonstring = new StringBuilder();
+	jsonstring.append('[');
+	Iterator iterator = products.iterator();
+	while (iterator.hasNext()) {
+
+		jsonstring.append(iterator.next());
+		if (iterator.hasNext()) {
+			jsonstring.append(",");
+		}
+		
+
+	}
+	jsonstring.append("]");
+	return jsonstring;
+
+}
+}
 			  	
 			  	
 			  	

@@ -10,8 +10,9 @@ public static void main(String args[])
 	Utility u=new Utility();
 	System.out.println("is temp in centigrade?");
 	Scanner scanner=new Scanner(System.in);
-	boolean temp=scanner.hasNext();
-	double temperature=u.inputInt();
+	boolean temp=u.inputBoolean();
+	System.out.println(temp);
+	double temperature=u.inputDouble();
 	u.temperaturConversion(temperature,temp);
 }
 }

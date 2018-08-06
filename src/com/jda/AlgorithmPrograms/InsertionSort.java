@@ -9,7 +9,7 @@ public class InsertionSort {
 		long startTimer=0;
 	    long stopTimer=0;
 		
-		long startTime=u.start(startTimer);
+		long startTime=u.startTimer();
 		
 		System.out.println("Enter no. of integers to be printed: ");
 		int n=u.inputInt();
@@ -25,8 +25,8 @@ public class InsertionSort {
 		u.insertionSort(b);
 	u.print1DArray(b);
 	
-	long stopTime=u.stop(stopTimer);
-	long elapsed=u.getElapsedTime(startTime,stopTime);
+	long stopTime=u.stopTimer();
+	long elapsed=u.elapsedTime(startTime,stopTime);
 	System.out.println(elapsed/1000);
 	
 	}

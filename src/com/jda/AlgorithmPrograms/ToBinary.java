@@ -5,9 +5,10 @@ import com.jda.utility.Utility;
 public class ToBinary {
 	public static void main(String args[])
 	{
-		Utility u=new Utility();
-		int n=u.inputInt();
-		System.out.println(u.toBinary(n));
+		System.out.println("please enter the number u want to convert into binary");
+		Utility utility=new Utility();
+		int input=utility.inputInt();
+		utility.toBinary(input);
 	}
 
 }

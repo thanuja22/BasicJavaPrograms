@@ -1,0 +1,25 @@
+{
+	"facebook": [{
+			"stockNames": "oculus",
+			"sharePrice": 2000,
+			"quantity": 10
+		},
+		{
+			"stockNames": "whatsapp",
+			"sharePrice": 1200,
+			"quantity": 30
+		}
+	],
+	"alphabet": [{
+			"stockNames": "google",
+			"sharePrice": 2200,
+			"quantity": 12
+		},
+		{
+			"stockNames": "google fiber",
+			"sharePrice": 1800,
+			"quantity": 8
+		}
+
+	]
+}

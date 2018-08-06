@@ -1,0 +1,15 @@
+{
+  "CUSTOMER" : [ {
+    "Amount" : "10",
+    "Mobile no" : "2",
+    "Customer Name" : "X"
+  }, {
+    "Amount" : "40",
+    "Mobile no" : "3",
+    "Customer Name" : "Y"
+  }, {
+    "Amount" : "80",
+    "Mobile no" : "5",
+    "Customer Name" : "Z"
+  } ]
+}

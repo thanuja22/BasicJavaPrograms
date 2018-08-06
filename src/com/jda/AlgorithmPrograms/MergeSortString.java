@@ -5,19 +5,18 @@ import com.jda.utility.Utility;
 public class MergeSortString {
 public static void main(String args[]) 
 {
-Utility sorting=new Utility();
-System.out.println("length of the array : ");
-int length=sorting.inputInt();
-System.out.println("array entries : ");
-String[] array=sorting.arrayStringInput(length);
-System.out.println("print the array : ");
-sorting.printStringArray(array);
-String[] sortedArray=sorting.mergeSort(array);
-System.out.println("sorted array : ");
-sorting.printStringArray(sortedArray);
+	Utility utility = new Utility();
+	System.out.println("please enter the no.of strings u want to enter");
+int input = utility.inputInt();
+String[] stringarray = new String[input];
+System.out.println("please enter the strings");
+for (int i = 0; i < input; i++) {
+	stringarray[i] = utility.inputString();
 
-
-
+}
+		utility.mergeSort(stringarray,0,input-1);
+		
+	utility.printArray(stringarray);
 	
 }
 }

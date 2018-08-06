@@ -1,0 +1,10 @@
+{
+  "TRANSACTION" : [ {
+  }, {
+    "name" : "X",
+    "stockname" : "Z",
+    "amount" : 40,
+    "stock" : 5,
+    "timeStamp" : "20180727_173733"
+  } ]
+}

@@ -1,0 +1,15 @@
+{
+  "STOCK" : [ {
+    "No of Shares" : "2",
+    "Stock Name" : "X",
+    "Stock Price" : "5"
+  }, {
+    "No of Shares" : "3",
+    "Stock Name" : "Y",
+    "Stock Price" : "4"
+  }, {
+    "No of Shares" : "0",
+    "Stock Name" : "Z",
+    "Stock Price" : "8"
+  } ]
+}

@@ -10,7 +10,7 @@ public class BinarySearchString {
 		 
 		Utility u=new Utility();
 		System.out.println("Enter number of words to be sorted: ");
-		int arraySize1=u.inputInt();
+
 		String b[]=u.input1DStringArray(arraySize1);
 		Arrays.sort(b);									//sorting the array
 		System.out.println();

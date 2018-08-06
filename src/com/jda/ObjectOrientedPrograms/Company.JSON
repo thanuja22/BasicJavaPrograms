@@ -1,0 +1,21 @@
+{
+	"Company":
+	[
+	{
+		"stockName":"facebook",
+		"noofShares":100,
+		"stockPrice":2000
+	},
+	{
+		"stockName":"google",
+		"noofShares":150,
+		"stockPrice":3000
+	},
+	{
+		"stockName":"tesla",
+		"noofShares":30,
+		"stockPrice":4000
+	}
+	
+]
+}
