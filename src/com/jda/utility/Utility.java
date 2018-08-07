@@ -1,8 +1,11 @@
 package com.jda.utility;
 import java.io.PrintWriter;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -37,7 +40,7 @@ public class Utility {
  * @return
  */
 	public String inputString(){
-		return scanner.nextLine();
+		return scanner.next();
 		
 	}
 	
@@ -1027,6 +1030,16 @@ public void fill(int i,String rslt[][], ArrayList<String> per)
 			rslt[i][j]=st;
 		}
 }
+//Function take String in dd/mm/yyyy format and return Date Object
+	public Date printDate(String date){
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/mm/yyyy");
+		try{
+			return sdf.parse(date);
+		}
+		catch(ParseException pe){
+			return null;
+		}
+	}
 
 }
 			  	

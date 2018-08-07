@@ -16,7 +16,7 @@ public class DeckOfCards {
 			for(int j=0;j<13;j++)
 			{
 				cards[k]=suits[i]+rank[j];
-				System.out.println(cards[k]);
+				//System.out.println(cards[k]);
 				k++;
 			}
 		}
