@@ -1,4 +1,4 @@
-package com.jda.utility;
+package com.jda.ObjectOrientedPrograms;
 
 public class Customer {
 	public String mobileno;
@@ -42,5 +42,4 @@ public class Customer {
 		//return String.format(" + "\"No of Shares +" + quantity,name,price,quantity);
 		return "{" + "\"name\":\"" + name + ",\"" + "\"mobileno\":\"" + mobileno + ",\"amount\":\"" + amount + "}";
 	}
-
 }

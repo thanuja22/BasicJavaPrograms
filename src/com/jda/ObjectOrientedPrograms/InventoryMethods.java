@@ -61,7 +61,7 @@ public class InventoryMethods {
 	
 	public static void printJSONinaFile(HashMap<String, ArrayList<Inventory>> inventoryMap) {
 		StringBuilder jsonstring = createJSONString(inventoryMap);
-		String filePath = "C:\\\\Users\\\\1023340\\\\eclipse-workspace\\\\JAVAPROJECT\\\\src\\\\com\\\\jda\\\\objectorientedprograms\\\\input\\\\rpw.txt";
+		String filePath = "C:\\\\Users\\\\1022281\\\\git\\\\BasicJavaPrograms\\\\src\\\\com\\jda\\ObjectOrientedPrograms\\Input1.JSON";
 		printToFile(filePath, inventoryMap);
 		try {
 			PrintWriter output = new PrintWriter(new File("filePath"));

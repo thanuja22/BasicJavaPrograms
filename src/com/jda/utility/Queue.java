@@ -52,5 +52,24 @@ public class Queue<T extends Comparable<T>> {
 		return temp;//return the front
 
 	}
+	 public int add(int cash,int num)
+	 {
+		 int key,data,value=cash;
+		
+			for(int i=0;i<num;i++)
+			{
+				System.out.println("Enter details of customer" +(i+1));
+				System.out.println("Enter amount of customer" +(i+1));
+				 data=util.inputInteger();
+				System.out.println("Enter 1 for deposit 2 for withdraw" );
+				 key=util.inputInteger();
+				
+				enqueue(key, data);
+				value=check(value,num);
+			}
+			
+			// int value=check(cash,num);
+			 return value;
+	 }
 	
 }

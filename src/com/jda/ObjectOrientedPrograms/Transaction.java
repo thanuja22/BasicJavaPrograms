@@ -1,4 +1,4 @@
-package com.jda.utility;
+package com.jda.ObjectOrientedPrograms;
 
 public class Transaction {
 	private String name;
@@ -73,4 +73,5 @@ public class Transaction {
 		//return String.format(" + "\"No of Shares +" + quantity,name,price,quantity);
 		return "{" + "\"name\":\"" + name + ",\"" + "\"stockname\":\"" + stockname + ",\"amount\":\"" + amount + ",\"stock\":\"" + stock + ",\"timeStamp\":\"" + timeStamp + "}";
 	}
+
 }

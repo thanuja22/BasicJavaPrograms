@@ -1,18 +1,27 @@
 package com.jda.ObjectOrientedPrograms;
 
-import java.io.;
+import java.io.*;
 
-
-
-import java.io.PrintStream;
-
-import com.jda.utility.Company;
+import com.jda.ObjectOrientedPrograms.*;
 
 
 
 
-public class MyLinkedList<T> {
+
+public class LinkedListImplement<T> {
 Node<T> head;
+
+public class Node<S>
+{
+	 S data;
+	 Node<S> next;
+	 
+	 Node(S d){
+		 data=d;
+		 next=null;
+	 }
+}
+
 	
 	public void add(T file) {
 		Node<T> n = new Node<T>(file);
@@ -221,7 +230,7 @@ Node<T> head;
 	
 	
 	public static void main(String[] args)throws Exception {
-		MyLinkedList<Integer> list = new MyLinkedList<Integer>();
+		LinkedListImplement<Integer> list = new LinkedListImplement<Integer>();
 		list.add(1);
 		list.add(2);
 		list.add(4);

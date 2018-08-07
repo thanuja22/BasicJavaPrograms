@@ -1,4 +1,4 @@
-package com.jda.utility;
+package com.jda.ObjectOrientedPrograms;
 
 public class Company {
 	public String price;
