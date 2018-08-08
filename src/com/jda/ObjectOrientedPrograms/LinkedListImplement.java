@@ -2,13 +2,13 @@ package com.jda.ObjectOrientedPrograms;
 
 import java.io.*;
 
-import com.jda.ObjectOrientedPrograms.*;
-
 
 
 
 
 public class LinkedListImplement<T> {
+	
+public static Company company = new Company();
 Node<T> head;
 
 public class Node<S>

@@ -1,45 +1,30 @@
 package com.jda.ObjectOrientedPrograms;
 
 public class Company {
-	public String price;
-	private String name;
-	private String quantity;
-	public Company(String name, String price,  String quantity){
-		this.price = price;
-		this.name = name;
-		this.quantity = quantity;
-	}
+	private String company;
+	private long sharesAvailable;
+	private long pricePerShare;
 	
-
-	public void setname(String name)
-	{
-		this.name = name;
+	public String toString() {
+		return "\n\t\t\tCompany \n\t\t\t\tcompany : " + company + "\n\t\t\t\tsharesAvailable : " + sharesAvailable + "\n\t\t\t\tpricePerShare : "
+				+ pricePerShare +"\n";
 	}
-	public void setprice(String price)
-	{
-		this.price = price;
+	public String getCompany() {
+		return company;
 	}
-	public void setquantity(String quantity)
-	{
-		this.quantity = quantity;
+	public void setCompany(String company) {
+		this.company = company;
 	}
-	public String getname()
-	{
-	
-		return name;
+	public long getSharesAvailable() {
+		return sharesAvailable;
 	}
-	public String getprice()
-	{
-		return price;
+	public void setSharesAvailable(long sharesAvailable) {
+		this.sharesAvailable = sharesAvailable;
 	}
-	public String getquantity()
-	{
-		return quantity;
+	public long getPricePerShare() {
+		return pricePerShare;
 	}
-	
-	@Override
-	public String toString(){
-		//return String.format(" + "\"No of Shares +" + quantity,name,price,quantity);
-		return "{" + "\"name\":\"" + name + ",\"" + "\"noofshare\":\"" + quantity + ",\"shareprice\":\"" + price + "}";
+	public void setPricePerShare(long pricePerShare) {
+		this.pricePerShare = pricePerShare;
 	}
 }
