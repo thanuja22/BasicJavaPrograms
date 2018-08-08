@@ -5,27 +5,27 @@
 	{
         "Name": "Brown Rice",
         "Weight": "2",
-        "pricePerKg": "5"
+        "priceperkg": "5"
 		},
 		 {
 	
         "Name": "Green Rice",
         "Weight": "3",
-        "pricePerKg": "4"
+        "priceperkg": "4"
 		}
     ],
 	 "Pulses": [
 	 {
         "Name": "Black Gram",
         "Weight": "3",
-        "pricePerKg": "10"
+        "priceperkg": "10"
 		}
     ],
 	 "Wheat": [
 	 {
         "Name": "Wheat",
         "Weight": "5",
-        "pricePerKg": "15"
+        "priceperkg": "15"
 		}
     ]
 }

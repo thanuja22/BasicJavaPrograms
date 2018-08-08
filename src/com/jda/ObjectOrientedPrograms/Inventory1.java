@@ -36,20 +36,19 @@ public class Inventory1 {
 			Utility util=new Utility();
 			amnt=util.fun(itr11, itr1, amnt, price, wt);
 			
-			 System.out.println();
-	        System.out.println("Pulses:");
+		
+	        System.out.println("\nPulses:");
 	        JSONArray Pulses = (JSONArray) jsonObject.get("Pulses");
 			 Iterator<Map.Entry> itr2 = null ;
 				Iterator itr22 = Pulses.iterator();
 	         
 	        // iterating address Map
 	        String wt2=null,wt3=null;
-	      //  Iterator<Map.Entry>
-	      //  System.out.println(amnt);
+	      
 	        amnt=util.fun(itr22, itr2, amnt, price, wt2);
 	    
-	        System.out.println();
-	        System.out.println("Wheat:");
+
+	        System.out.println("\nWheat:");
 	        JSONArray Wheat = (JSONArray) jsonObject.get("Wheat");
 			 Iterator<Map.Entry> itr3 = null ;
 				Iterator itr33 = Wheat.iterator();

@@ -39,7 +39,7 @@ public class Utility {
  * Method for replace string
  * @return
  */
-	public String inputString(){
+	public static String inputString(){
 		return scanner.next();
 		
 	}
@@ -52,7 +52,7 @@ public class Utility {
 	 * method for leap year
 	 * @return
 	 */
-	public int inputInt()
+	public static int inputInt()
 	{
 		
 		return scanner.nextInt();
@@ -970,7 +970,7 @@ public int fun(Iterator itr11,Iterator<Entry> itr1,int amnt,int price,String wt)
            	
            }
           
-           if((pair.getKey()).equals("pricePerKg"))
+           if((pair.getKey()).equals("priceperkg"))
            {
            	String val=(String) pair.getValue();
            
