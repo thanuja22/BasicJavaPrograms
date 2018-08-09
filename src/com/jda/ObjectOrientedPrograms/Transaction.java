@@ -74,4 +74,5 @@ public class Transaction {
 		return "{" + "\"name\":\"" + name + ",\"" + "\"stockname\":\"" + stockname + ",\"amount\":\"" + amount + ",\"stock\":\"" + stock + ",\"timeStamp\":\"" + timeStamp + "}";
 	}
 
+
 }

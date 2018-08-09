@@ -1,13 +1,6 @@
 package com.jda.ObjectOrientedPrograms;
 
 public class LinkedQueue<T> {
-	public class Node<T> {
-		public Node<T> next;
-		public T data;
-		public Node(T data) {
-			this.data=data;
-		}
-	}
 	Node<T> head;
 	public void add(T data) {
 		Node<T> n = new Node<T>(data);
@@ -56,6 +49,14 @@ public class LinkedQueue<T> {
 			return false;
 	}
 	
-	
+	public static void main(String[] args) {
+		LinkedQueue<Integer> l = new LinkedQueue<Integer>();
+		l.add(1);
+		l.display();
+		System.out.println("==");
+		l.remove();
+		l.display();
+		System.out.println(l.isEmpty());
+	}
 
 }

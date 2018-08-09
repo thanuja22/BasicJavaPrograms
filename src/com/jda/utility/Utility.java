@@ -7,6 +7,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Date;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.io.FileInputStream;
@@ -20,6 +21,8 @@ import java.io.InputStreamReader;
  */
 import java.util.Scanner;
 import java.util.Stack;
+
+import com.jda.ObjectOrientedPrograms.Company;
 public class Utility {
 	
 		
@@ -1040,7 +1043,15 @@ public void fill(int i,String rslt[][], ArrayList<String> per)
 			return null;
 		}
 	}
-
+	public long totalValuesOfShares(List<Company> company) {
+		long totalShares = 0;
+		for (Company c : company) {
+			long share = c.getSharesAvailable();
+			long price = c.getPricePerShare();
+			totalShares += (share * price);
+		}
+		return totalShares;
+	}
 }
 			  	
 			  	

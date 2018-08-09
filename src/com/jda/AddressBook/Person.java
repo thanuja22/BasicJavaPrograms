@@ -27,5 +27,9 @@ public Address getAddress()
 public void setAddress(Address address) {
 	this.address=address;
 }
-public String
+public String toString()
+{
+	return "\n\t\t\tPerson \n\t\t\t\tFirst Name : " + firstName + "\n\t\t\t\tLast Name  : " + lastName + "\n\t\t\t\tAddress  " + address + "\n\t\t\t\tPhone Number : "
+			+ phoneNumber + "\n\n";
+}
 }
